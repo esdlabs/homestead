@@ -1,6 +1,6 @@
 {
-    "name": "laravel/homestead",
-    "description": "A virtual machine for web artisans.",
+    "name": "esdlabs/homestead",
+    "description": "Customized homestead for Esdlabs",
     "require": {
         "php": ">=5.4",
         "symfony/console": "~2.0",
