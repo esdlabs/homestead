@@ -1,7 +1,7 @@
 ---
 ip: "192.168.10.10"
 memory: 2048
-cpus: 2
+cpus: 1
 
 authorize: ~/.ssh/id_rsa.pub
 
@@ -9,16 +9,15 @@ keys:
     - ~/.ssh/id_rsa
 
 folders:
-    - map: /Users/ericktamayo/jasperom/source/backend
-      to: /home/vagrant/jasper
+    - map: ~/Code
+      to: /home/vagrant/Code
 
 sites:
-    - map: jasper.dev
-      to: /home/vagrant/jasper/public
-      hhvm: true
+    - map: homestead.app
+      to: /home/vagrant/Code/Laravel/public
 
 databases:
-    - jasper
+    - homestead
 
 variables:
     - key: APP_ENV
