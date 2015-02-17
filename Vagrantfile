@@ -19,4 +19,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	if File.exists? afterScriptPath then
 		config.vm.provision "shell", path: afterScriptPath
 	end
+
+	config.trigger.after :up do
+		exec 'for i in `ls ~/.homestead/ssl/*.crt`; do sudo security add-trusted-cert -d -r trustRoot -k "/Library/Keychains/System.keychain" $i; done'
+	end	
+
 end

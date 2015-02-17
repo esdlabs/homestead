@@ -50,6 +50,9 @@ class Homestead
       config.vm.synced_folder folder["map"], folder["to"], type: folder["type"] ||= nil
     end
 
+    # Sync SSL Folder
+    config.vm.synced_folder '~/.homestead/ssl', '/etc/nginx/ssl/', nil
+
     # Install All The Configured Nginx Sites
     settings["sites"].each do |site|
       config.vm.provision "shell" do |s|
